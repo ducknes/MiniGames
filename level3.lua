@@ -26,7 +26,7 @@ function scene:create(event)
     local bottom = display.newRect(sceneGroup, 320/2, 600, 500, 10)
     physics.addBody(bottom,"static")
 
-    local back = display.newImageRect(sceneGroup, "bg-level3.png", display.actualContentWidth, display.actualContentHeight)
+    local back = display.newImageRect(sceneGroup, "city.jpeg", display.actualContentWidth, display.actualContentHeight)
     back.anchorX = 0
 	back.anchorY = 0
 	back.x = 0 + display.screenOriginX
@@ -36,7 +36,7 @@ function scene:create(event)
     colCoin.x = 30
     colCoin.y = -50
 
-    local bird = display.newImageRect(sceneGroup, "flappy-bird.png", 50, 40)
+    local bird = display.newImageRect(sceneGroup, "golub.png", 80, 80)
     bird.x = 100
     bird.y = 480 / 2
     bird:setFillColor (1,1,2,1)
@@ -48,7 +48,7 @@ function scene:create(event)
     local moneyText = display.newText(sceneGroup, ":"..moneyCount, 80, -50, "RubikWetPaint-Regular.ttf", 35)
 
     local function push()
-        bird:applyLinearImpulse(0,-0.015, bird.x, bird.y)
+        bird:applyLinearImpulse(0,-0.04, bird.x, bird.y)
         local flyChannel = audio.play(birdSound)
     end
     back:addEventListener("touch", push)
