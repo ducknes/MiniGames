@@ -46,6 +46,7 @@ function scene:create(event)
 
     local moneyCount = math.random(1, 3)
     local moneyText = display.newText(sceneGroup, ":"..moneyCount, 80, -50, "RubikWetPaint-Regular.ttf", 35)
+    moneyText:setFillColor (1,0,0)
 
     local function push()
         bird:applyLinearImpulse(0,-0.04, bird.x, bird.y)
@@ -100,7 +101,7 @@ function scene:create(event)
     pipeTimer = timer.performWithDelay(2000, spawnPipes, 0)
 
     local function spawnCoin()
-        local coin = display.newImageRect(sceneGroup, "coin.png", 100, 100)
+        local coin = display.newImageRect(sceneGroup, "semki.png", 90, 100)
         coin.x = 500
         coin.y = coinY + 320
         coin.ID = "Coin"
@@ -122,8 +123,7 @@ function scene:create(event)
 
     local function spawnBlackCoin()
         if (checkSpawn[math.random(1,5)]) then
-            local coin = display.newImageRect(sceneGroup, "coin.png", 100, 100)
-            coin:setFillColor(0, 0, 0)
+            local coin = display.newImageRect(sceneGroup, "bread.png", 80, 60)
             coin.x = 500
             coin.y = coinY + 320
             coin.ID = "BlackCoin"
